@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class InicioLoginPage extends BasePage {
-    private Prod url1 = new Prod();
+    private Prod url = new Prod();
 
     private SelenideElement botonMakeApp = $(By.id("btn-make-appointment"));
     private SelenideElement campoUsuario = $(By.xpath("//input[@id='txt-username']"));
@@ -18,7 +18,7 @@ public class InicioLoginPage extends BasePage {
     private SelenideElement mensajeDeErrorInicioSesion = $(By.linkText("Login failed! Please ensure the username and password are valid."));
 
     public void entrarAlPagina(){
-        navegador(url1.urlPruebas());
+        navegador(url.urlPruebas());
     }
     public void clickVistaPrincipal (){
         botonMakeApp.click();

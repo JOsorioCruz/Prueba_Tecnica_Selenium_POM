@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinitions;
 
 import com.codeborne.selenide.Selenide;
 import credenciales.Login;
