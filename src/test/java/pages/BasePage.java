@@ -6,18 +6,13 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 
 public class BasePage {
-    public void navegador(String url) {
+    static {
         Configuration.browserSize = "1280x800";
         Configuration.browser = "chrome";
         SelenideLogger.addListener("allure", new AllureSelenide());
-        Selenide.sleep(2000);
+    }
+
+    public void navegador(String url) {
         Selenide.open(url);
     }
 }
-
-/**
- public class BasePage {
-
-
- }
-*/

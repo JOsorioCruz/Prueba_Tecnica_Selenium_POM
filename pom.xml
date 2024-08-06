@@ -77,6 +77,11 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+                    <includes>
+                        <include>**/*Test.class</include>
+                        <include>**/*Tests.class</include>
+                        <include>**/*TestCase.class</include>
+                    </includes>
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>

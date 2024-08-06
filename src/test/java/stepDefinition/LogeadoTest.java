@@ -7,7 +7,7 @@ import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 import pages.DashboarPage;
 
-public class LogeadoStep {
+public class LogeadoTest {
     private Login inicioLogin = new Login();
     private DashboarPage dashboard = new DashboarPage();
 

@@ -8,7 +8,7 @@ import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 import pages.InicioLoginPage;
 
-public class InicioLoginStep extends InicioLoginPage {
+public class InicioLoginTest extends InicioLoginPage {
     Usuarios crendenciales = new Usuarios();
     InicioLoginPage inicioLogin = new InicioLoginPage();
     @Test
