@@ -18,7 +18,7 @@ public class InicioLoginStep {
         inicio.escribirContrasena();
         inicio.hacerClickEnBotonLogin();
         Selenide.sleep(2000);
+        inicio.textoVisible();
         WebDriverRunner.closeWebDriver();
     }
-
 }

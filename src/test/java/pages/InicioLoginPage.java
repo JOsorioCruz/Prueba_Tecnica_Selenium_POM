@@ -6,6 +6,7 @@ import credenciales.Usuarios;
 import org.openqa.selenium.By;
 import url.Prod;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class InicioLoginPage extends BasePage {
@@ -17,6 +18,7 @@ public class InicioLoginPage extends BasePage {
     private SelenideElement campoUsuario = $(By.xpath("//input[@id='txt-username']"));
     private SelenideElement campoContrasena = $(By.xpath("//div/input[@id='txt-password']"));
     private SelenideElement botonLogin = $(By.id("btn-login"));
+    private SelenideElement textoInicioSesionvalida = $(By.linkText("Make Appointment"));
     public void entrarAlPagina(){
         navegador(url1.urlPruebas());
     }
@@ -35,5 +37,9 @@ public class InicioLoginPage extends BasePage {
 
     public void hacerClickEnBotonLogin(){
         botonLogin.click();
+    }
+
+    public void textoVisible(){
+        textoInicioSesionvalida.shouldBe(visible);
     }
 }
