@@ -1,4 +1,4 @@
-<img src="imagen.png" alt="Descripción de la imagen" width="200"/>
+![Descripción de la imagen](imagen.png)
 
 # Proyecto Selenium Maven Java POM
 
