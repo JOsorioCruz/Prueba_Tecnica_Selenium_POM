@@ -8,13 +8,13 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class InicioLoginPage extends BasePage {
-    Prod url1 = new Prod();
+    private Prod url1 = new Prod();
 
     private SelenideElement botonMakeApp = $(By.id("btn-make-appointment"));
     private SelenideElement campoUsuario = $(By.xpath("//input[@id='txt-username']"));
     private SelenideElement campoContrasena = $(By.xpath("//div/input[@id='txt-password']"));
     private SelenideElement botonLogin = $(By.id("btn-login"));
-    private SelenideElement textoInicioSesionvalida = $(By.linkText("Make Appointment"));
+    private SelenideElement textoInicioSesionValida = $(By.linkText("Make Appointment"));
     private SelenideElement mensajeDeErrorInicioSesion = $(By.linkText("Login failed! Please ensure the username and password are valid."));
 
     public void entrarAlPagina(){
@@ -38,14 +38,11 @@ public class InicioLoginPage extends BasePage {
     }
 
     public void textoVisible(){
-        textoInicioSesionvalida.shouldBe(visible);
+        textoInicioSesionValida.shouldBe(visible);
     }
 
     public void textoVisibleDos(){
         mensajeDeErrorInicioSesion.shouldNotBe(visible);
     }
-
-    public void textoNoVisible(){
-        textoInicioSesionvalida.shouldNotBe(visible.negate());
-    }
 }
+

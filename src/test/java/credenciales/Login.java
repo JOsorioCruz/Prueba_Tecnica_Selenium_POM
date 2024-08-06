@@ -3,8 +3,9 @@ package credenciales;
 import pages.InicioLoginPage;
 
 public class Login {
-    Usuarios crendenciales = new Usuarios();
-    InicioLoginPage inicioLogin = new InicioLoginPage();
+    private Usuarios crendenciales = new Usuarios();
+    private InicioLoginPage inicioLogin = new InicioLoginPage();
+
     public void inicioLogeado() {
         inicioLogin.entrarAlPagina();
         inicioLogin.clickVistaPrincipal();

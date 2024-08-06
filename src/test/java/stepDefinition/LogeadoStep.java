@@ -8,18 +8,16 @@ import org.junit.jupiter.api.Test;
 import pages.DashboarPage;
 
 public class LogeadoStep {
-    Login inicioLogin = new Login();
-    DashboarPage logeado = new DashboarPage();
-
+    private Login inicioLogin = new Login();
+    private DashboarPage dashboard = new DashboarPage();
 
     @Test
     @Feature("Envio con la primera opcion")
     @Description("Verificar el envio de un mensaje con usuario logeando opcion 1")
     public void seleccionarOpcion1() {
         inicioLogin.inicioLogeado();
-        logeado.clickFacilityDropDown();
-        logeado.seleccionarOpcionDropDown1();
-        Selenide.sleep(3000);
+        dashboard.clickFacilityDropDown();
+        dashboard.seleccionarOpcionDropDown1();
         Selenide.closeWebDriver();
     }
 
@@ -28,9 +26,8 @@ public class LogeadoStep {
     @Description("Verificar el envio de un mensaje con usuario logeando opcion 2")
     public void seleccionarOpcion2() {
         inicioLogin.inicioLogeado();
-        logeado.clickFacilityDropDown();
-        logeado.seleccionarOpcionDropDown2();
-        Selenide.sleep(3000);
+        dashboard.clickFacilityDropDown();
+        dashboard.seleccionarOpcionDropDown2();
         Selenide.closeWebDriver();
     }
 }

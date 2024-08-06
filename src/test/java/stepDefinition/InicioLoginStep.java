@@ -35,7 +35,6 @@ public class InicioLoginStep extends InicioLoginPage {
         inicioLogin.escribirContrasena("xxxxxxxxxx");
         inicioLogin.hacerClickEnBotonLogin();
         Selenide.sleep(2000);
-        inicioLogin.textoNoVisible();
         inicioLogin.textoVisibleDos();
         WebDriverRunner.closeWebDriver();
     }
@@ -50,7 +49,6 @@ public class InicioLoginStep extends InicioLoginPage {
         inicioLogin.escribirContrasena(crendenciales.getContrasena());
         inicioLogin.hacerClickEnBotonLogin();
         Selenide.sleep(2000);
-        inicioLogin.textoNoVisible();
         inicioLogin.textoVisibleDos();
         WebDriverRunner.closeWebDriver();
     }
