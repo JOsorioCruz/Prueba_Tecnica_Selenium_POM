@@ -1,4 +1,5 @@
-![Descripción de la imagen](/home/jairo/IdeaProjects/Prueba_Tecnica_Selenium_POM/img.png)
+<img src="imagen.png" alt="Descripción de la imagen" width="200"/>
+
 # Proyecto Selenium Maven Java POM
 
 Este proyecto es una prueba técnica utilizando Selenium, Selenide, Maven, y el patrón Page Object Model (POM). El objetivo del proyecto es automatizar pruebas de una aplicación web demostrativa.
