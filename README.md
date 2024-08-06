@@ -1,5 +1,3 @@
-<img src="imagen.png" alt="Descripción de la imagen" width="200"/>
-
 # Proyecto Selenium Maven Java POM
 
 Este proyecto es una prueba técnica utilizando Selenium, Selenide, Maven, y el patrón Page Object Model (POM). El objetivo del proyecto es automatizar pruebas de una aplicación web demostrativa.
@@ -53,17 +51,17 @@ El archivo pom.xml está configurado con las propiedades necesarias para compila
 Para ejecutar las pruebas y generar los reportes, utiliza los siguientes comandos en la consola:
 
 - Ejecutar las Pruebas
-```bash
+```
 mvn clean test
 ```
 
 - Generar Reporte de Allure
-```bash
+```
 mvn allure:report
 ```
 
 - Servir el Reporte de Allure
-```bash
+```
 mvn allure:serve
 ```
 
