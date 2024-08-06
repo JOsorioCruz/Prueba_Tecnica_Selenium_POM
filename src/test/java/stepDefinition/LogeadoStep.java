@@ -16,11 +16,11 @@ public class LogeadoStep {
     @Feature("Envio con la primera opcion")
     @Description("Verificar el envio de un mensaje con usuario logeando opcion 1")
     public void seleccionarOpcion1() {
-      inicioLogin.inicioLogeado();
-      logeado.clickFacilityDropDown();
-      logeado.seleccionarOpcionDropDown1();
-      Selenide.sleep(3000);
-      Selenide.closeWebDriver();
+        inicioLogin.inicioLogeado();
+        logeado.clickFacilityDropDown();
+        logeado.seleccionarOpcionDropDown1();
+        Selenide.sleep(3000);
+        Selenide.closeWebDriver();
     }
 
     @Test
