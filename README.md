@@ -1,5 +1,3 @@
-![Descripción de la imagen](imagen.png)
-
 # Proyecto Selenium Maven Java POM
 
 Este proyecto es una prueba técnica utilizando Selenium, Selenide, Maven, y el patrón Page Object Model (POM). El objetivo del proyecto es automatizar pruebas de una aplicación web demostrativa.
