@@ -77,6 +77,14 @@ mvn allure:serve
 
 - Estructura Modular: Sigue manteniendo una estructura modular y limpia en tu proyecto, asegurándote de que cada clase tenga una única responsabilidad y esté correctamente encapsulada.
 
+### Enlaces de Páginas Oficiales
+
+- **Selenium**: [Selenium Documentation](https://www.selenium.dev/documentation/)
+- **Selenide**: [Selenide Documentation](https://selenide.org/documentation.html)
+- **Maven**: [Maven Documentation](https://maven.apache.org/guides/index.html)
+- **Page Object Model**: [POM Design Pattern](https://www.selenium.dev/documentation/en/guidelines_and_recommendations/page_object_models/)
+- **Allure**: [Allure Documentation](https://docs.qameta.io/allure/)
+
 ## Contribución
 
 Si deseas contribuir a este proyecto, por favor sigue las pautas establecidas en el archivo README.md y asegúrate de mantener el código limpio y bien documentado.

@@ -8,8 +8,6 @@ import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 import pages.DashboarPage;
 
-import java.sql.Date;
-
 public class LogeadoTest {
     private Login inicioLogin = new Login();
     private DashboarPage dashboard = new DashboarPage();
@@ -17,8 +15,8 @@ public class LogeadoTest {
 
     @Test
     @Feature("Make Appointment")
-    @Description("Verificicar make appointment exitoso, seleccionando opcion: al azar")
-    public void makeAppointmente1(){
+    @Description("Verificar la realización de una cita exitosa seleccionando una opción del menú desplegable al azar")
+    public void makeAppointmenteDropDownAlAzar(){
         inicioLogin.inicioLogeado();
         dashboard.validarNombreDeLaPagina();
         dashboard.validarBoxModelTituloConfirmacion();
@@ -34,8 +32,8 @@ public class LogeadoTest {
 
     @Test
     @Feature("Make Appointment")
-    @Description("Verificicar make appointment fallido, sin seleccionar fecha")
-    public void makeAppointmente2(){
+    @Description("Verificicar falla al realizar un cita, sin seleccionar fecha")
+    public void makeAppointmentSinFecha(){
         inicioLogin.inicioLogeado();
         dashboard.validarNombreDeLaPagina();
         dashboard.seleccionarOpcionDropDown();
@@ -49,8 +47,8 @@ public class LogeadoTest {
 
     @Test
     @Feature("Make Appointment")
-    @Description("Verificicar make appointment exitoso, sin seleccionar check box")
-    public void makeAppointmente3(){
+    @Description("Verificar realizacion de una cita exitosa sin seleccionar la casilla de verificación")
+    public void makeAppointmenteSinCasillaDeVerificaion(){
         inicioLogin.inicioLogeado();
         dashboard.validarNombreDeLaPagina();
         dashboard.seleccionarOpcionDropDown();
@@ -64,8 +62,8 @@ public class LogeadoTest {
 
     @Test
     @Feature("Make Appointment")
-    @Description("Verificicar make appointment exitoso, sin escribir comentarios")
-    public void makeAppointmente4(){
+    @Description("Verificicar realizacion de una cita exitosa, sin escribir comentarios")
+    public void makeAppointmenteSinComentarios(){
         inicioLogin.inicioLogeado();
         dashboard.validarNombreDeLaPagina();
         dashboard.seleccionarOpcionDropDown();
