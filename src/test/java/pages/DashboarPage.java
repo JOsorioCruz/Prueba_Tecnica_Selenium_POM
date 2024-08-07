@@ -74,18 +74,6 @@ public class DashboarPage extends BasePage{
         campoComentario.sendKeys(texto);
     }
 
-    public void validarBoxModelBotonBook() {
-        botonClickBook.shouldHave(cssValue("width", "136.633px"));
-        botonClickBook.shouldHave(cssValue("height", "34px"));
-        botonClickBook.shouldHave(cssValue("box-sizing", "border-box"));
-        botonClickBook.shouldHave(cssValue("display", "inline-block"));
-        botonClickBook.shouldHave(cssValue("float", "none"));
-        botonClickBook.shouldHave(cssValue("line-height", "20px"));
-        botonClickBook.shouldHave(cssValue("position", "static"));
-        botonClickBook.shouldHave(cssValue("z-index", "auto"));
-    }
-
-
     public void hagoClickEnBookAppointment(){
         botonClickBook.click();
     }
