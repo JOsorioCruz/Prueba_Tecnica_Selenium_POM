@@ -5,8 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import url.Prod;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class InicioLoginPage extends BasePage {
@@ -25,6 +24,18 @@ public class InicioLoginPage extends BasePage {
     public void entrarAlPagina(){
         navegador(url.urlPruebas());
     }
+
+    public void validarBoxModelBotonMakeApp() {
+        botonMakeApp.shouldHave(cssValue("width", "176.938px"));
+        botonMakeApp.shouldHave(cssValue("height", "46px"));
+        botonMakeApp.shouldHave(cssValue("box-sizing", "border-box"));
+        botonMakeApp.shouldHave(cssValue("display", "inline-block"));
+        botonMakeApp.shouldHave(cssValue("float", "none"));
+        botonMakeApp.shouldHave(cssValue("line-height", "24px"));
+        botonMakeApp.shouldHave(cssValue("position", "static"));
+        botonMakeApp.shouldHave(cssValue("z-index", "auto"));
+    }
+
     public void clickVistaPrincipal (){
         botonMakeApp.click();
         Selenide.sleep(3000);

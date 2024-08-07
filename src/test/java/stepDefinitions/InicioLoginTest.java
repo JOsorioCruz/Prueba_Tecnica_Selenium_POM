@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import com.codeborne.selenide.WebDriverRunner;
+import com.github.javafaker.Faker;
 import credenciales.Usuarios;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
@@ -10,12 +11,14 @@ import pages.InicioLoginPage;
 public class InicioLoginTest extends InicioLoginPage {
     Usuarios crendenciales = new Usuarios();
     InicioLoginPage inicioLogin = new InicioLoginPage();
+    Faker credencialesRandom = new Faker();
     @Test
     @Feature("inicio de sesion exitoso")
     @Description("Verificar Ingreso a la pagina principal con crendenciales correctas")
     public void inicioExitoso() {
         inicioLogin.entrarAlPagina();
         inicioLogin.validarNombreDelTituloPrincipal();
+        inicioLogin.validarBoxModelBotonMakeApp();
         inicioLogin.clickVistaPrincipal();
         inicioLogin.escribirUsuario(crendenciales.getUsuario());
         inicioLogin.escribirContrasena(crendenciales.getContrasena());
@@ -30,9 +33,10 @@ public class InicioLoginTest extends InicioLoginPage {
     public void inicioFallido() {
         inicioLogin.entrarAlPagina();
         inicioLogin.validarNombreDelTituloPrincipal();
+        inicioLogin.validarBoxModelBotonMakeApp();
         inicioLogin.clickVistaPrincipal();
         inicioLogin.escribirUsuario(crendenciales.getUsuario());
-        inicioLogin.escribirContrasena("xxxxxxxxxx");
+        inicioLogin.escribirContrasena(credencialesRandom.name().name());
         inicioLogin.hacerClickEnBotonLogin();
         inicioLogin.textoVisibleDos();
         WebDriverRunner.closeWebDriver();
@@ -44,8 +48,9 @@ public class InicioLoginTest extends InicioLoginPage {
     public void inicioFallidoDos() {
         inicioLogin.entrarAlPagina();
         inicioLogin.validarNombreDelTituloPrincipal();
+        inicioLogin.validarBoxModelBotonMakeApp();
         inicioLogin.clickVistaPrincipal();
-        inicioLogin.escribirUsuario("xxxxxxxxxxxx");
+        inicioLogin.escribirUsuario(credencialesRandom.name().name());
         inicioLogin.escribirContrasena(crendenciales.getContrasena());
         inicioLogin.hacerClickEnBotonLogin();
         inicioLogin.textoVisibleDos();
