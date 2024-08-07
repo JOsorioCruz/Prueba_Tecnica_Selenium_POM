@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BasePage {
     static {
-        String navegador = "edge"; //edge, firefox, chrome
+        String navegador = "chrome"; //edge, firefox, chrome
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-password-manager-reauthentication");
@@ -20,11 +20,9 @@ public class BasePage {
         if(navegador.equals("chrome")){
             Configuration.browser = navegador;
             Configuration.browserCapabilities = options;
-           // Configuration.browserSize = "1280x800";
             Configuration.headless = false;
             SelenideLogger.addListener("allure", new AllureSelenide());
         }else{
-            // Configuration.browserSize = "1280x800";
             Configuration.browser = navegador;
             Configuration.headless = false;
             SelenideLogger.addListener("allure", new AllureSelenide());
