@@ -18,7 +18,7 @@ public class LogeadoTest {
     @Test
     @Feature("Make Appointment")
     @Description("Verificicar make appointment exitoso, seleccionando opcion: al azar")
-    public void makeAppointmente(){
+    public void makeAppointmente1(){
         inicioLogin.inicioLogeado();
         dashboard.validarNombreDeLaPagina();
         dashboard.validarBoxModelTituloConfirmacion();

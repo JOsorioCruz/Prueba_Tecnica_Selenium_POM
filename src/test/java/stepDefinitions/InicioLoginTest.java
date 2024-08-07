@@ -15,7 +15,7 @@ public class InicioLoginTest extends InicioLoginPage {
     @Test
     @Feature("inicio de sesion exitoso")
     @Description("Verificar Ingreso a la pagina principal con crendenciales correctas")
-    public void inicioExitoso() {
+    public void inicio1() {
         inicioLogin.entrarAlPagina();
         inicioLogin.validarNombreDelTituloPrincipal();
         inicioLogin.validarBoxModelBotonMakeApp();
@@ -30,7 +30,7 @@ public class InicioLoginTest extends InicioLoginPage {
     @Test
     @Feature("inicio de sesion fallido")
     @Description("Verificar el ingreso a la pagina principal con contrasena incorrecta")
-    public void inicioFallido() {
+    public void inicio2() {
         inicioLogin.entrarAlPagina();
         inicioLogin.validarNombreDelTituloPrincipal();
         inicioLogin.validarBoxModelBotonMakeApp();
@@ -45,7 +45,7 @@ public class InicioLoginTest extends InicioLoginPage {
     @Test
     @Feature("inicio de sesion fallido")
     @Description("Verificar el ingreso a la pagina principal con usuario incorrecto")
-    public void inicioFallidoDos() {
+    public void inicio3() {
         inicioLogin.entrarAlPagina();
         inicioLogin.validarNombreDelTituloPrincipal();
         inicioLogin.validarBoxModelBotonMakeApp();
