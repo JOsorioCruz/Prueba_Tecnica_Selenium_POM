@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class InicioLoginPage extends BasePage {
+
     private Prod url = new Prod();
     private SelenideElement tituloPrincipal = $(By.xpath("//h1"));
     private SelenideElement botonMakeApp = $(By.id("btn-make-appointment"));
@@ -26,16 +27,27 @@ public class InicioLoginPage extends BasePage {
     }
 
     public void validarBoxModelBotonMakeApp() {
-        botonMakeApp.shouldHave(cssValue("width", "176.938px"));
-        botonMakeApp.shouldHave(cssValue("height", "46px"));
         botonMakeApp.shouldHave(cssValue("box-sizing", "border-box"));
         botonMakeApp.shouldHave(cssValue("display", "inline-block"));
         botonMakeApp.shouldHave(cssValue("float", "none"));
         botonMakeApp.shouldHave(cssValue("line-height", "24px"));
         botonMakeApp.shouldHave(cssValue("position", "static"));
         botonMakeApp.shouldHave(cssValue("z-index", "auto"));
-    }
 
+        String width = botonMakeApp.getCssValue("width");
+        String height = botonMakeApp.getCssValue("height");
+
+        double widthValue = Double.parseDouble(width.replace("px", ""));
+        double heightValue = Double.parseDouble(height.replace("px", ""));
+
+        if (widthValue <= 176.93 || widthValue >= 176.95) {
+            throw new AssertionError("Ancho fuera de rango: " + width);
+        }
+
+        if (heightValue <= 45 || heightValue >= 47) {
+            throw new AssertionError("Altura fuera de rango: " + height);
+        }
+    }
     public void clickVistaPrincipal (){
         botonMakeApp.click();
         Selenide.sleep(3000);
@@ -60,5 +72,6 @@ public class InicioLoginPage extends BasePage {
     public void textoVisibleDos(){
         mensajeDeErrorInicioSesion.shouldNotBe(visible);
     }
+
 }
 

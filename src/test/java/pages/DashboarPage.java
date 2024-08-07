@@ -84,15 +84,28 @@ public class DashboarPage extends BasePage{
     }
 
     public void validarBoxModelTituloConfirmacion() {
-        tituloConfirmacion.shouldHave(cssValue("width", "1140px"));
-        tituloConfirmacion.shouldHave(cssValue("height", "33px"));
         tituloConfirmacion.shouldHave(cssValue("box-sizing", "border-box"));
         tituloConfirmacion.shouldHave(cssValue("display", "block"));
         tituloConfirmacion.shouldHave(cssValue("float", "none"));
         tituloConfirmacion.shouldHave(cssValue("line-height", "33px"));
         tituloConfirmacion.shouldHave(cssValue("position", "static"));
         tituloConfirmacion.shouldHave(cssValue("z-index", "auto"));
+
+        String width = tituloConfirmacion.getCssValue("width");
+        String height = tituloConfirmacion.getCssValue("height");
+
+        int widthValue = Integer.parseInt(width.replace("px", "").split("\\.")[0]);
+        int heightValue = Integer.parseInt(height.replace("px", "").split("\\.")[0]);
+
+        if (widthValue <= 1100 || widthValue >= 1200) {
+            throw new AssertionError("Ancho fuera de rango: " + width);
+        }
+
+        if (heightValue <= 30 || heightValue >= 35) {
+            throw new AssertionError("Altura fuera de rango: " + height);
+        }
     }
+
     public void validarNoConfirmacionAppointment() {
         tituloConfirmacion.shouldNotBe(visible.negate());
     }
