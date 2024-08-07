@@ -8,8 +8,8 @@ import io.qameta.allure.selenide.AllureSelenide;
 public class BasePage {
     static {
         Configuration.browserSize = "1280x800";
-        Configuration.browser = "chrome";
-        Configuration.headless = true;
+        Configuration.browser = "edge";
+        Configuration.headless = false;
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 

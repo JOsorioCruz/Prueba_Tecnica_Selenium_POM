@@ -8,9 +8,18 @@ public class Login {
 
     public void inicioLogeado() {
         inicioLogin.entrarAlPagina();
+        inicioLogin.validarNombreDelTituloPrincipal();
         inicioLogin.clickVistaPrincipal();
         inicioLogin.escribirUsuario(crendenciales.getUsuario());
         inicioLogin.escribirContrasena(crendenciales.getContrasena());
+        inicioLogin.hacerClickEnBotonLogin();
+    }
+    public void inicioUsuarioYContrasena(String usuario, String contrasena) {
+        inicioLogin.entrarAlPagina();
+        inicioLogin.validarNombreDelTituloPrincipal();
+        inicioLogin.clickVistaPrincipal();
+        inicioLogin.escribirUsuario(usuario);
+        inicioLogin.escribirContrasena(contrasena);
         inicioLogin.hacerClickEnBotonLogin();
     }
 }

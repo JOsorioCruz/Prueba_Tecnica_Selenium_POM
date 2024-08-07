@@ -4,12 +4,14 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import url.Prod;
+
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class InicioLoginPage extends BasePage {
     private Prod url = new Prod();
-
+    private SelenideElement tituloPrincipal = $(By.xpath("//h1"));
     private SelenideElement botonMakeApp = $(By.id("btn-make-appointment"));
     private SelenideElement campoUsuario = $(By.xpath("//input[@id='txt-username']"));
     private SelenideElement campoContrasena = $(By.xpath("//div/input[@id='txt-password']"));
@@ -17,6 +19,9 @@ public class InicioLoginPage extends BasePage {
     private SelenideElement textoInicioSesionValida = $(By.linkText("Make Appointment"));
     private SelenideElement mensajeDeErrorInicioSesion = $(By.linkText("Login failed! Please ensure the username and password are valid."));
 
+    public void validarNombreDelTituloPrincipal() {
+        tituloPrincipal.shouldBe(visible).shouldHave(text("CURA Healthcare Service"));
+    }
     public void entrarAlPagina(){
         navegador(url.urlPruebas());
     }

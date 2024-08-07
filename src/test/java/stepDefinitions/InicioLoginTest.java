@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import credenciales.Usuarios;
 import io.qameta.allure.Description;
@@ -16,11 +15,11 @@ public class InicioLoginTest extends InicioLoginPage {
     @Description("Verificar Ingreso a la pagina principal con crendenciales correctas")
     public void inicioExitoso() {
         inicioLogin.entrarAlPagina();
+        inicioLogin.validarNombreDelTituloPrincipal();
         inicioLogin.clickVistaPrincipal();
         inicioLogin.escribirUsuario(crendenciales.getUsuario());
         inicioLogin.escribirContrasena(crendenciales.getContrasena());
         inicioLogin.hacerClickEnBotonLogin();
-        Selenide.sleep(2000);
         inicioLogin.textoVisible();
         WebDriverRunner.closeWebDriver();
     }
@@ -30,11 +29,11 @@ public class InicioLoginTest extends InicioLoginPage {
     @Description("Verificar el ingreso a la pagina principal con contrasena incorrecta")
     public void inicioFallido() {
         inicioLogin.entrarAlPagina();
+        inicioLogin.validarNombreDelTituloPrincipal();
         inicioLogin.clickVistaPrincipal();
         inicioLogin.escribirUsuario(crendenciales.getUsuario());
         inicioLogin.escribirContrasena("xxxxxxxxxx");
         inicioLogin.hacerClickEnBotonLogin();
-        Selenide.sleep(2000);
         inicioLogin.textoVisibleDos();
         WebDriverRunner.closeWebDriver();
     }
@@ -44,11 +43,11 @@ public class InicioLoginTest extends InicioLoginPage {
     @Description("Verificar el ingreso a la pagina principal con usuario incorrecto")
     public void inicioFallidoDos() {
         inicioLogin.entrarAlPagina();
+        inicioLogin.validarNombreDelTituloPrincipal();
         inicioLogin.clickVistaPrincipal();
         inicioLogin.escribirUsuario("xxxxxxxxxxxx");
         inicioLogin.escribirContrasena(crendenciales.getContrasena());
         inicioLogin.hacerClickEnBotonLogin();
-        Selenide.sleep(2000);
         inicioLogin.textoVisibleDos();
         WebDriverRunner.closeWebDriver();
     }

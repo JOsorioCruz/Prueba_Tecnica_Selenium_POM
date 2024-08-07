@@ -51,17 +51,17 @@ El archivo pom.xml está configurado con las propiedades necesarias para compila
 Para ejecutar las pruebas y generar los reportes, utiliza los siguientes comandos en la consola:
 
 - Ejecutar las Pruebas
-```
+```bash
 mvn clean test
 ```
 
 - Generar Reporte de Allure
-```
+```bash
 mvn allure:report
 ```
 
 - Servir el Reporte de Allure
-```
+```bash
 mvn allure:serve
 ```
 

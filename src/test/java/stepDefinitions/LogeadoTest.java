@@ -1,33 +1,36 @@
 package stepDefinitions;
 
 import com.codeborne.selenide.Selenide;
+import com.github.javafaker.Faker;
 import credenciales.Login;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.DashboarPage;
+
+import java.sql.Date;
 
 public class LogeadoTest {
     private Login inicioLogin = new Login();
     private DashboarPage dashboard = new DashboarPage();
+    Date fecha = new Date(22-02-2024);
+    Faker textoRandom = new Faker();
+
 
     @Test
-    @Feature("Envio con la primera opcion")
-    @Description("Verificar el envio de un mensaje con usuario logeando opcion 1")
-    public void seleccionarOpcion1() {
+    @Feature("Make Appointment")
+    @Description("Verificicar make appointment exitoso, seleccionando opcion: medicare")
+    public void makeAppointmente(){
         inicioLogin.inicioLogeado();
-        dashboard.clickFacilityDropDown();
-        dashboard.seleccionarOpcionDropDown1();
-        Selenide.closeWebDriver();
-    }
-
-    @Test
-    @Feature("Envio con la segunda opcion")
-    @Description("Verificar el envio de un mensaje con usuario logeando opcion 2")
-    public void seleccionarOpcion2() {
-        inicioLogin.inicioLogeado();
-        dashboard.clickFacilityDropDown();
-        dashboard.seleccionarOpcionDropDown2();
+        dashboard.validarNombreDeLaPagina();
+        dashboard.seleccionarOpcionDropDown(2);
+        dashboard.seleccionarCheckBox();
+        dashboard.seleccionarRadioButton(2);
+        dashboard.elegirFecha(fecha);
+        dashboard.escribir(textoRandom.random().toString());
+        dashboard.hagoClickEnBookAppointment();
+        dashboard.validarConfirmacionAppointment();
         Selenide.closeWebDriver();
     }
 }
