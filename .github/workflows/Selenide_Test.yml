@@ -1,44 +1,48 @@
-name: Java CI with Maven
+name: Selenium Tests with Allure
 
 on:
   push:
     branches:
-      - pipeline
+      - main
+      - develop
 
 jobs:
-  build:
+  selenium-run:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
           java-version: '17'
+          distribution: 'temurin'
 
       - name: Cache Maven packages
         uses: actions/cache@v3
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+          restore-keys: ${{ runner.os }}-maven
 
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Install Dependencies
+        run: mvn clean install -DskipTests
 
-      - name: Run Tests
+      - name: Clean Allure Report Directory
+        run: rm -rf allure-results && mkdir -p allure-results
+
+      - name: Run Selenium Tests with Allure
         run: mvn test
 
       - name: Generate Allure Report
-        run: mvn allure:report
+        run: |
+          npm install -g allure-commandline --save-dev
+          allure generate allure-results --clean -o allure-report
 
       - name: Upload Allure Report
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: allure-report
-          path: target/site/allure-maven-plugin
+          name: Allure Report
+          path: allure-report/
