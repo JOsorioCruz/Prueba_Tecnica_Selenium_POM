@@ -18,8 +18,8 @@ public class LogeadoTest {
     @Description("Verificar la realización de una cita exitosa seleccionando una opción del menú desplegable al azar")
     public void makeAppointmenteDropDownAlAzar(){
         inicioLogin.inicioLogeado();
-       // dashboard.validarNombreDeLaPagina();
-        //dashboard.validarBoxModelTituloConfirmacion();
+        dashboard.validarNombreDeLaPagina();
+        dashboard.validarBoxModelTituloConfirmacion();
         dashboard.seleccionarOpcionDropDown();
         dashboard.seleccionarCheckBox();
         dashboard.seleccionarRadioButton();
