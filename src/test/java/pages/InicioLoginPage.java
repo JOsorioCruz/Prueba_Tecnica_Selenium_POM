@@ -12,11 +12,11 @@ public class InicioLoginPage extends BasePage {
 
     private Prod url = new Prod();
     private SelenideElement tituloPrincipal = $(By.xpath("//h1"));
-    private SelenideElement botonMakeApp = $(By.id("btn-make-appointmen"));
+    private SelenideElement botonMakeApp = $(By.id("btn-make-appointment"));
     private SelenideElement campoUsuario = $(By.xpath("//input[@id='txt-username']"));
     private SelenideElement campoContrasena = $(By.xpath("//div/input[@id='txt-password']"));
     private SelenideElement botonLogin = $(By.id("btn-login"));
-    private SelenideElement textoInicioSesionValida = $(By.linkText("Make Appointment"));
+    private SelenideElement textoInicioSesionValida = $(By.linkText("Make App"));
     private SelenideElement mensajeDeErrorInicioSesion = $(By.linkText("Login failed! Please ensure the username and password are valid."));
 
     public void validarNombreDelTituloPrincipal() {
