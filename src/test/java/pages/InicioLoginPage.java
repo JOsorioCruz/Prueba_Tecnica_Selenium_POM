@@ -12,7 +12,7 @@ public class InicioLoginPage extends BasePage {
 
     private Prod url = new Prod();
     private SelenideElement tituloPrincipal = $(By.xpath("//h1"));
-    private SelenideElement botonMakeApp = $(By.id("btn-make-appointment"));
+    private SelenideElement botonMakeApp = $(By.id("btn-make-appointmen"));
     private SelenideElement campoUsuario = $(By.xpath("//input[@id='txt-username']"));
     private SelenideElement campoContrasena = $(By.xpath("//div/input[@id='txt-password']"));
     private SelenideElement botonLogin = $(By.id("btn-login"));
