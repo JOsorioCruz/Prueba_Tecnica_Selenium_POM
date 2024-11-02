@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BasePage {
     static {
-        String navegador = "chrome"; //edge, firefox, chrome
+        String navegador = "edge"; //edge, firefox, chrome
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-password-manager-reauthentication");

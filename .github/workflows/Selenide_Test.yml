@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - pipeline
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Java
         uses: actions/setup-java@v3
@@ -36,6 +37,7 @@ jobs:
         run: mvn allure:report
 
       - name: Upload Allure Report
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: allure-report
