@@ -20,11 +20,11 @@ public class BasePage {
         if(navegador.equals("chrome")){
             Configuration.browser = navegador;
             Configuration.browserCapabilities = options;
-            Configuration.headless = false;
+            Configuration.headless = true;
             SelenideLogger.addListener("allure", new AllureSelenide());
         }else{
             Configuration.browser = navegador;
-            Configuration.headless = false;
+            Configuration.headless = true;
             SelenideLogger.addListener("allure", new AllureSelenide());
         }
     }
